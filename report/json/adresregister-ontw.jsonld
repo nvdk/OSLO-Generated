@@ -1,0 +1,312 @@
+{
+    "@context": {
+        "vlaanderen": "http://data.vlaanderen.be/ns/",
+        "owl": "http://www.w3.org/2002/07/owl#",
+        "void": "http://rdfs.org/ns/void#",
+        "dcterms": "http://purl.org/dc/terms/",
+        "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+        "dcat": "http://www.w3.org/ns/dcat#",
+        "sdmx-dimension": "http://purl.org/linked-data/sdmx/2009/dimension#",
+        "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+        "sdmx-attribute": "http://purl.org/linked-data/sdmx/2009/attribute#",
+        "qb": "http://purl.org/linked-data/cube#",
+        "skos": "http://www.w3.org/2004/02/skos/core#",
+        "xsd": "http://www.w3.org/2001/XMLSchema#",
+        "sdmx-concept": "http://purl.org/linked-data/sdmx/2009/concept#",
+        "foaf": "http://xmlns.com/foaf/0.1/",
+        "person": "http://www.w3.org/ns/person#",
+        "rec": "http://www.w3.org/2001/02pd/rec54#",
+        "vann": "http://purl.org/vocab/vann/",
+        "sh": "http://w3.org/ns/shacl#",
+        "label": {
+            "@id": "rdfs:label",
+            "@container": "@language"
+        },
+        "modified": {
+            "@id": "dcterms:modified",
+            "@type": "xsd:date"
+        },
+        "issued": {
+            "@id": "dcterms:issued"
+        },
+        "authors": {
+            "@type": "person:Person",
+            "@id": "foaf:maker"
+        },
+        "editors": {
+            "@type": "person:Person",
+            "@id": "rec:editor"
+        },
+        "contributors": {
+            "@type": "person:Person",
+            "@id": "dcterms:contributor"
+        },
+        "affiliation": {
+            "@id": "http://schema.org/affiliation"
+        },
+        "classes": {
+            "@reverse": "rdfs:isDefinedBy"
+        },
+        "datatypes": {
+            "@reverse": "rdfs:isDefinedBy"
+        },
+        "name": {
+            "@id": "rdfs:label",
+            "@container": "@language"
+        },
+        "description": {
+            "@id": "rdfs:comment",
+            "@container": "@language"
+        },
+        "properties": {
+            "@reverse": "rdfs:isDefinedBy"
+        },
+        "domain": {
+            "@id": "rdfs:domain"
+        },
+        "range": {
+            "@id": "rdfs:range"
+        },
+        "minCardinality": {
+            "@id": "sh:minCount"
+        },
+        "maxCardinality": {
+            "@id": "sh:maxCount"
+        },
+        "generalization": {
+            "@id": "rdfs:subPropertyOf"
+        },
+        "externals": {
+            "@type": "http://www.w3.org/2000/01/rdf-schema#Class",
+            "@id": "rdfs:seeAlso"
+        },
+        "usage": {
+            "@id": "vann:usageNote",
+            "@container": "@language"
+        }
+    },
+    "@id": "https://data.vlaanderen.be/ns/adres",
+    "@type": "http://www.w3.org/2002/07/owl#Ontology",
+    "label": {
+        "nl": "adresregister-ontw",
+        "en": "adresregister-ontw"
+    },
+    "authors": [
+        {
+            "foaf:first_name": "Ziggy",
+            "foaf:last_name": "Vanlishout",
+            "affiliation": {
+                "foaf:name": "Informatie Vlaanderen",
+                "foaf:homepage": "https://overheid.vlaanderen.be/informatie-vlaanderen"
+            },
+            "foaf:mbox": "siegfried.vanlishout@kb.vlaanderen.be",
+            "@type": "person:Person"
+        },
+        {
+            "foaf:first_name": "Geert",
+            "foaf:last_name": "Thijs",
+            "affiliation": {
+                "foaf:name": "Informatie Vlaanderen",
+                "foaf:homepage": "https://overheid.vlaanderen.be/informatie-vlaanderen"
+            },
+            "foaf:mbox": "geert.thijs@kb.vlaanderen.be",
+            "@type": "person:Person"
+        },
+        {
+            "foaf:first_name": "Ruben",
+            "foaf:last_name": "Capiau",
+            "affiliation": {
+                "foaf:name": "Informatie Vlaanderen",
+                "foaf:homepage": "https://overheid.vlaanderen.be/informatie-vlaanderen"
+            },
+            "foaf:mbox": "ruben.capiau@kb.vlaanderen.be",
+            "@type": "person:Person"
+        },
+        {
+            "foaf:first_name": "Jan",
+            "foaf:last_name": "Laporte",
+            "affiliation": {
+                "foaf:name": "Informatie Vlaanderen",
+                "foaf:homepage": "https://overheid.vlaanderen.be/informatie-vlaanderen"
+            },
+            "foaf:mbox": "jan.laporte@kb.vlaanderen.be",
+            "@type": "person:Person"
+        },
+        {
+            "foaf:first_name": "Veerle",
+            "foaf:last_name": "Beyaert",
+            "affiliation": {
+                "foaf:name": "Informatie Vlaanderen",
+                "foaf:homepage": "https://overheid.vlaanderen.be/informatie-vlaanderen"
+            },
+            "foaf:mbox": "veerle.beyaert@kb.vlaanderen.be",
+            "@type": "person:Person"
+        }
+    ],
+    "editors": [],
+    "contributors": [
+        {
+            "foaf:first_name": "Koen",
+            "foaf:last_name": "D'Haen",
+            "affiliation": {
+                "foaf:name": "Telenet",
+                "foaf:homepage": "https://www.telenet.be"
+            },
+            "foaf:mbox": "koen.dhaen1@staff.telenet.be",
+            "@type": "person:Person"
+        },
+        {
+            "foaf:first_name": "Raf",
+            "foaf:last_name": "Buyle",
+            "affiliation": {
+                "foaf:name": "Informatie Vlaanderen",
+                "foaf:homepage": "https://overheid.vlaanderen.be/informatie-vlaanderen"
+            },
+            "foaf:mbox": "raf.buyle@kb.vlaanderen.be",
+            "@type": "person:Person"
+        },
+        {
+            "foaf:first_name": "Dieter",
+            "foaf:last_name": "De Paepe",
+            "affiliation": {
+                "foaf:name": "imec - UGent",
+                "foaf:homepage": "http://idlab.ugent.be"
+            },
+            "foaf:mbox": "dieter.depaepe@ugent.be",
+            "@type": "person:Person"
+        },
+        {
+            "foaf:first_name": "Bert",
+            "foaf:last_name": "Van Nuffelen",
+            "affiliation": {
+                "foaf:name": "Tenforce",
+                "foaf:homepage": "http://tenforce.com"
+            },
+            "foaf:mbox": "bert.van.nuffelen@tenforce.com",
+            "@type": "person:Person"
+        },
+        {
+            "foaf:first_name": "Erik",
+            "foaf:last_name": "Mannens",
+            "affiliation": {
+                "foaf:name": "imec - UGent",
+                "foaf:homepage": "http://idlab.ugent.be"
+            },
+            "foaf:mbox": "erik.mannens@ugent.be",
+            "@type": "person:Person"
+        },
+        {
+            "foaf:first_name": "Barbara",
+            "foaf:last_name": "Van Broeckhoven",
+            "affiliation": {
+                "foaf:name": "Informatie Vlaanderen",
+                "foaf:homepage": "https://overheid.vlaanderen.be/informatie-vlaanderen"
+            },
+            "foaf:mbox": "barbara.vanbroeckhoven@kb.vlaanderen.be",
+            "@type": "person:Person"
+        },
+        {
+            "foaf:first_name": "Katrien",
+            "foaf:last_name": "Geerts",
+            "affiliation": {
+                "foaf:name": "Informatie Vlaanderen",
+                "foaf:homepage": "https://overheid.vlaanderen.be/informatie-vlaanderen"
+            },
+            "foaf:mbox": "katrien.geerts@kb.vlaanderen.be",
+            "@type": "person:Person"
+        },
+        {
+            "foaf:first_name": "Christiaan",
+            "foaf:last_name": "Bos",
+            "affiliation": {
+                "foaf:name": "Stad Antwerpen",
+                "foaf:homepage": "https://www.antwerpen.be"
+            },
+            "foaf:mbox": "christiaan.bos@stad.antwerpen.be",
+            "@type": "person:Person"
+        },
+        {
+            "foaf:first_name": "Laurens",
+            "foaf:last_name": "De Vocht",
+            "affiliation": {
+                "foaf:name": "imec - UGent",
+                "foaf:homepage": "http://idlab.ugent.be"
+            },
+            "foaf:mbox": "laurens.devocht@ugent.be",
+            "@type": "person:Person"
+        },
+        {
+            "foaf:first_name": "Wout",
+            "foaf:last_name": "Groniger",
+            "affiliation": {
+                "foaf:name": "VMSW",
+                "foaf:homepage": "https://www.vmsw.be"
+            },
+            "foaf:mbox": "Wout.groniger@vmsw.be",
+            "@type": "person:Person"
+        },
+        {
+            "foaf:first_name": "Katleen",
+            "foaf:last_name": "Miserez",
+            "affiliation": {
+                "foaf:name": "VMM",
+                "foaf:homepage": "https://www.vmm.be"
+            },
+            "foaf:mbox": "k.miserez@vmm.be",
+            "@type": "person:Person"
+        },
+        {
+            "foaf:first_name": "Diedrik",
+            "foaf:last_name": "Gaus",
+            "affiliation": {
+                "foaf:name": "Stad Gent",
+                "foaf:homepage": "https://stad.gent"
+            },
+            "foaf:mbox": "Diedrik.Gaus@stad.gent",
+            "@type": "person:Person"
+        },
+        {
+            "foaf:first_name": "Michaël",
+            "foaf:last_name": "Sibiet",
+            "affiliation": {
+                "foaf:name": "Stad Leuven",
+                "foaf:homepage": "https://www.leuven.be"
+            },
+            "foaf:mbox": "Michael.Sibiet@leuven.be",
+            "@type": "person:Person"
+        },
+        {
+            "foaf:first_name": "Ireen",
+            "foaf:last_name": "Librecht",
+            "affiliation": {
+                "foaf:name": "Provincie Vlaams-Brabant",
+                "foaf:homepage": "https://www.vlaamsbrabant.be"
+            },
+            "foaf:mbox": "ireen.librecht@vlaamsbrabant.be",
+            "@type": "person:Person"
+        },
+        {
+            "foaf:first_name": "Olivier",
+            "foaf:last_name": "Heyvaert",
+            "affiliation": {
+                "foaf:name": "Wonen-Vlaanderen",
+                "foaf:homepage": "https://www.wonenvlaanderen.be"
+            },
+            "foaf:mbox": "olivier.heyvaert@rwo.vlaanderen.be",
+            "@type": "person:Person"
+        },
+        {
+            "foaf:first_name": "Paul",
+            "foaf:last_name": "Verbeeck",
+            "affiliation": {
+                "foaf:name": "Fednot",
+                "foaf:homepage": "https://www.fednot.be"
+            },
+            "foaf:mbox": "Paul.Verbeeck@fednot.be",
+            "@type": "person:Person"
+        }
+    ],
+    "classes": [],
+    "properties": [],
+    "externals": []
+}

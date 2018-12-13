@@ -1,0 +1,15 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://data.vlaanderen.be/ns/openbaardomein/waterdeel#WatervlakShacl> a <http://www.w3.org/ns/shacl#NodeShape>;
+   <http://www.w3.org/ns/shacl#closed> false;
+   <http://www.w3.org/ns/shacl#property> [
+     <http://www.w3.org/ns/shacl#class> "http://www.w3.org/2001/XMLSchema#string";
+     <http://www.w3.org/ns/shacl#datatype> "http://www.w3.org/2001/XMLSchema#string";
+     <http://www.w3.org/ns/shacl#description> "TODO";
+     <http://www.w3.org/ns/shacl#maxCount> 1;
+     <http://www.w3.org/ns/shacl#minCount> 1;
+     <http://www.w3.org/ns/shacl#name> "naam";
+     <http://www.w3.org/ns/shacl#path> "http://purl.org/dc/terms/title"
+];
+   <http://www.w3.org/ns/shacl#targetClass> "http://data.vlaanderen.be/ns/openbaardomein/waterdeel#Watervlak" .

@@ -1,0 +1,1539 @@
+{
+    "@context": {
+        "vlaanderen": "http://data.vlaanderen.be/ns/",
+        "owl": "http://www.w3.org/2002/07/owl#",
+        "void": "http://rdfs.org/ns/void#",
+        "dcterms": "http://purl.org/dc/terms/",
+        "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+        "dcat": "http://www.w3.org/ns/dcat#",
+        "sdmx-dimension": "http://purl.org/linked-data/sdmx/2009/dimension#",
+        "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+        "sdmx-attribute": "http://purl.org/linked-data/sdmx/2009/attribute#",
+        "qb": "http://purl.org/linked-data/cube#",
+        "skos": "http://www.w3.org/2004/02/skos/core#",
+        "xsd": "http://www.w3.org/2001/XMLSchema#",
+        "sdmx-concept": "http://purl.org/linked-data/sdmx/2009/concept#",
+        "foaf": "http://xmlns.com/foaf/0.1/",
+        "person": "http://www.w3.org/ns/person#",
+        "rec": "http://www.w3.org/2001/02pd/rec54#",
+        "vann": "http://purl.org/vocab/vann/",
+        "sh": "http://w3.org/ns/shacl#",
+        "label": {
+            "@id": "rdfs:label",
+            "@container": "@language"
+        },
+        "modified": {
+            "@id": "dcterms:modified",
+            "@type": "xsd:date"
+        },
+        "issued": {
+            "@id": "dcterms:issued"
+        },
+        "authors": {
+            "@type": "person:Person",
+            "@id": "foaf:maker"
+        },
+        "editors": {
+            "@type": "person:Person",
+            "@id": "rec:editor"
+        },
+        "contributors": {
+            "@type": "person:Person",
+            "@id": "dcterms:contributor"
+        },
+        "affiliation": {
+            "@id": "http://schema.org/affiliation"
+        },
+        "classes": {
+            "@reverse": "rdfs:isDefinedBy"
+        },
+        "datatypes": {
+            "@reverse": "rdfs:isDefinedBy"
+        },
+        "name": {
+            "@id": "rdfs:label",
+            "@container": "@language"
+        },
+        "description": {
+            "@id": "rdfs:comment",
+            "@container": "@language"
+        },
+        "properties": {
+            "@reverse": "rdfs:isDefinedBy"
+        },
+        "domain": {
+            "@id": "rdfs:domain"
+        },
+        "range": {
+            "@id": "rdfs:range"
+        },
+        "minCardinality": {
+            "@id": "sh:minCount"
+        },
+        "maxCardinality": {
+            "@id": "sh:maxCount"
+        },
+        "generalization": {
+            "@id": "rdfs:subPropertyOf"
+        },
+        "externals": {
+            "@type": "http://www.w3.org/2000/01/rdf-schema#Class",
+            "@id": "rdfs:seeAlso"
+        },
+        "usage": {
+            "@id": "vann:usageNote",
+            "@container": "@language"
+        }
+    },
+    "@id": "https://data.vlaanderen.be/ns/gebouw",
+    "@type": "http://www.w3.org/2002/07/owl#Ontology",
+    "label": {
+        "nl": "gebouw-standard-v1.0.0",
+        "en": "gebouw-standard-v1.0.0"
+    },
+    "authors": [
+        {
+            "foaf:first_name": "Ziggy",
+            "foaf:last_name": "Vanlishout",
+            "affiliation": {
+                "foaf:name": "Informatie Vlaanderen",
+                "foaf:homepage": "https://overheid.vlaanderen.be/informatie-vlaanderen"
+            },
+            "foaf:mbox": "siegfried.vanlishout@kb.vlaanderen.be",
+            "@type": "person:Person"
+        },
+        {
+            "foaf:first_name": "Geert",
+            "foaf:last_name": "Thijs",
+            "affiliation": {
+                "foaf:name": "Informatie Vlaanderen",
+                "foaf:homepage": "https://overheid.vlaanderen.be/informatie-vlaanderen"
+            },
+            "foaf:mbox": "geert.thijs@kb.vlaanderen.be",
+            "@type": "person:Person"
+        },
+        {
+            "foaf:first_name": "Ruben",
+            "foaf:last_name": "Capiau",
+            "affiliation": {
+                "foaf:name": "Informatie Vlaanderen",
+                "foaf:homepage": "https://overheid.vlaanderen.be/informatie-vlaanderen"
+            },
+            "foaf:mbox": "ruben.capiau@kb.vlaanderen.be",
+            "@type": "person:Person"
+        },
+        {
+            "foaf:first_name": "Jan",
+            "foaf:last_name": "Laporte",
+            "affiliation": {
+                "foaf:name": "Informatie Vlaanderen",
+                "foaf:homepage": "https://overheid.vlaanderen.be/informatie-vlaanderen"
+            },
+            "foaf:mbox": "jan.laporte@kb.vlaanderen.be",
+            "@type": "person:Person"
+        },
+        {
+            "foaf:first_name": "Veerle",
+            "foaf:last_name": "Beyaert",
+            "affiliation": {
+                "foaf:name": "Informatie Vlaanderen",
+                "foaf:homepage": "https://overheid.vlaanderen.be/informatie-vlaanderen"
+            },
+            "foaf:mbox": "veerle.beyaert@kb.vlaanderen.be",
+            "@type": "person:Person"
+        }
+    ],
+    "editors": [],
+    "contributors": [
+        {
+            "foaf:first_name": "Wout",
+            "foaf:last_name": "Groniger",
+            "affiliation": {
+                "foaf:name": "VMSW",
+                "foaf:homepage": "https://www.vmsw.be"
+            },
+            "foaf:mbox": "Wout.groniger@vmsw.be",
+            "@type": "person:Person"
+        },
+        {
+            "foaf:first_name": "Raf",
+            "foaf:last_name": "Buyle",
+            "affiliation": {
+                "foaf:name": "Informatie Vlaanderen",
+                "foaf:homepage": "https://overheid.vlaanderen.be/informatie-vlaanderen"
+            },
+            "foaf:mbox": "raf.buyle@kb.vlaanderen.be",
+            "@type": "person:Person"
+        },
+        {
+            "foaf:first_name": "Barbara",
+            "foaf:last_name": "Van Broeckhoven",
+            "affiliation": {
+                "foaf:name": "Informatie Vlaanderen",
+                "foaf:homepage": "https://overheid.vlaanderen.be/informatie-vlaanderen"
+            },
+            "foaf:mbox": "barbara.vanbroeckhoven@kb.vlaanderen.be",
+            "@type": "person:Person"
+        },
+        {
+            "foaf:first_name": "Katrien",
+            "foaf:last_name": "Geerts",
+            "affiliation": {
+                "foaf:name": "Informatie Vlaanderen",
+                "foaf:homepage": "https://overheid.vlaanderen.be/informatie-vlaanderen"
+            },
+            "foaf:mbox": "katrien.geerts@kb.vlaanderen.be",
+            "@type": "person:Person"
+        },
+        {
+            "foaf:first_name": "Christiaan",
+            "foaf:last_name": "Bos",
+            "affiliation": {
+                "foaf:name": "Stad Antwerpen",
+                "foaf:homepage": "https://www.antwerpen.be"
+            },
+            "foaf:mbox": "christiaan.bos@stad.antwerpen.be",
+            "@type": "person:Person"
+        },
+        {
+            "foaf:first_name": "Koen",
+            "foaf:last_name": "D'Haen",
+            "affiliation": {
+                "foaf:name": "Telenet",
+                "foaf:homepage": "https://www.telenet.be"
+            },
+            "foaf:mbox": "koen.dhaen1@staff.telenet.be",
+            "@type": "person:Person"
+        },
+        {
+            "foaf:first_name": "Bert",
+            "foaf:last_name": "Van Nuffelen",
+            "affiliation": {
+                "foaf:name": "Tenforce",
+                "foaf:homepage": "http://tenforce.com"
+            },
+            "foaf:mbox": "bert.van.nuffelen@tenforce.com",
+            "@type": "person:Person"
+        },
+        {
+            "foaf:first_name": "Katleen",
+            "foaf:last_name": "Miserez",
+            "affiliation": {
+                "foaf:name": "VMM",
+                "foaf:homepage": "https://www.vmm.be"
+            },
+            "foaf:mbox": "k.miserez@vmm.be",
+            "@type": "person:Person"
+        },
+        {
+            "foaf:first_name": "Diedrik",
+            "foaf:last_name": "Gaus",
+            "affiliation": {
+                "foaf:name": "Stad Gent",
+                "foaf:homepage": "https://stad.gent"
+            },
+            "foaf:mbox": "Diedrik.Gaus@stad.gent",
+            "@type": "person:Person"
+        },
+        {
+            "foaf:first_name": "Michaël",
+            "foaf:last_name": "Sibiet",
+            "affiliation": {
+                "foaf:name": "Stad Leuven",
+                "foaf:homepage": "https://www.leuven.be"
+            },
+            "foaf:mbox": "Michael.Sibiet@leuven.be",
+            "@type": "person:Person"
+        },
+        {
+            "foaf:first_name": "Ireen",
+            "foaf:last_name": "Librecht",
+            "affiliation": {
+                "foaf:name": "Provincie Vlaams-Brabant",
+                "foaf:homepage": "https://www.vlaamsbrabant.be"
+            },
+            "foaf:mbox": "ireen.librecht@vlaamsbrabant.be",
+            "@type": "person:Person"
+        },
+        {
+            "foaf:first_name": "Olivier",
+            "foaf:last_name": "Heyvaert",
+            "affiliation": {
+                "foaf:name": "Wonen-Vlaanderen",
+                "foaf:homepage": "https://www.wonenvlaanderen.be"
+            },
+            "foaf:mbox": "olivier.heyvaert@rwo.vlaanderen.be",
+            "@type": "person:Person"
+        },
+        {
+            "foaf:first_name": "Paul",
+            "foaf:last_name": "Verbeeck",
+            "affiliation": {
+                "foaf:name": "Fednot",
+                "foaf:homepage": "https://www.fednot.be"
+            },
+            "foaf:mbox": "Paul.Verbeeck@fednot.be",
+            "@type": "person:Person"
+        }
+    ],
+    "classes": [
+        {
+            "@id": "https://data.vlaanderen.be/ns/gebouw#GebouweenheidstatusWaarde",
+            "@type": "http://www.w3.org/2002/07/owl#Class",
+            "name": {
+                "nl": "TODO"
+            },
+            "description": {},
+            "usage": {}
+        },
+        {
+            "@id": "https://data.vlaanderen.be/ns/gebouw#2DGeometrieMethodeWaarde",
+            "@type": "http://www.w3.org/2002/07/owl#Class",
+            "name": {
+                "nl": "TODO"
+            },
+            "description": {},
+            "usage": {}
+        },
+        {
+            "@id": "http://www.w3.org/2004/02/skos/core#Concept",
+            "@type": "http://www.w3.org/2002/07/owl#Class",
+            "name": {
+                "nl": "TODO"
+            },
+            "description": {},
+            "usage": {}
+        },
+        {
+            "@id": "http://www.w3.org/2004/02/skos/core#Concept",
+            "@type": "http://www.w3.org/2002/07/owl#Class",
+            "name": {
+                "nl": "TODO"
+            },
+            "description": {},
+            "usage": {}
+        },
+        {
+            "@id": "http://www.w3.org/ns/locn#Geometry",
+            "@type": "http://www.w3.org/2002/07/owl#Class",
+            "name": {
+                "nl": "Geometrie"
+            },
+            "description": {
+                "nl": "TODO"
+            },
+            "usage": {}
+        },
+        {
+            "@id": "https://data.vlaanderen.be/ns/gebouw#2DGebouwgeometrie",
+            "@type": "http://www.w3.org/2002/07/owl#Class",
+            "name": {
+                "nl": "2D Gebouwgeometrie"
+            },
+            "description": {
+                "nl": "Geometrie van het gebouw en metadata over welk deel van het gebouw door de geometrie wordt voorgesteld en hoe deze werd bepaald."
+            },
+            "usage": {}
+        },
+        {
+            "@id": "http://www.w3.org/2004/02/skos/core#Concept",
+            "@type": "http://www.w3.org/2002/07/owl#Class",
+            "name": {
+                "nl": "TODO"
+            },
+            "description": {},
+            "usage": {}
+        },
+        {
+            "@id": "https://data.vlaanderen.be/ns/adres#Locatieaanduiding",
+            "@type": "http://www.w3.org/2002/07/owl#Class",
+            "name": {
+                "nl": "Locatieaanduiding"
+            },
+            "description": {
+                "nl": "Alfanumerieke code die een adreslocator uniek identificeert binnen de straat, administratieve eenheid etc."
+            },
+            "usage": {}
+        },
+        {
+            "@id": "https://data.vlaanderen.be/ns/generiek#Gebeurtenisdatum",
+            "@type": "http://www.w3.org/2002/07/owl#Class",
+            "name": {
+                "nl": "Gebeurtenisdatum"
+            },
+            "description": {
+                "nl": "Datum waarop een gebeurtenis plaatsvond evt op een alternatieve manier beschreven. "
+            },
+            "usage": {}
+        },
+        {
+            "@id": "http://www.w3.org/2004/02/skos/core#Concept",
+            "@type": "http://www.w3.org/2002/07/owl#Class",
+            "name": {
+                "nl": "TODO"
+            },
+            "description": {
+                "nl": "Waarden die de status van een gebouw weergeven."
+            },
+            "usage": {}
+        },
+        {
+            "@id": "http://www.w3.org/2004/02/skos/core#Concept",
+            "@type": "http://www.w3.org/2002/07/owl#Class",
+            "name": {
+                "nl": "TODO"
+            },
+            "description": {
+                "nl": "Waarden die het huidig gebruik weergeven."
+            },
+            "usage": {}
+        },
+        {
+            "@id": "http://www.w3.org/ns/locn#Address",
+            "@type": "http://www.w3.org/2002/07/owl#Class",
+            "name": {
+                "nl": "Adresvoorstelling"
+            },
+            "description": {
+                "nl": "TODO"
+            },
+            "usage": {}
+        },
+        {
+            "@id": "https://data.vlaanderen.be/ns/adres#Adres",
+            "@type": "http://www.w3.org/2002/07/owl#Class",
+            "name": {
+                "nl": "Belgisch Adres"
+            },
+            "description": {
+                "nl": "Informatie die toelaat om op een gestructureerde en unieke manier te verwijzen naar een gebouweenheid, een ligplaats, een standplaats of een perceel op basis van een gemeentenaam, een straatnaam, een huisnummer en eventueel een busnummer en een postcode."
+            },
+            "usage": {}
+        },
+        {
+            "@id": "https://data.vlaanderen.be/ns/adres#AdresseerbaarObject",
+            "@type": "http://www.w3.org/2002/07/owl#Class",
+            "name": {
+                "nl": "Adresseerbaar Object"
+            },
+            "description": {
+                "nl": "Geografisch object dat met een adres kan worden geïdentificeerd."
+            },
+            "usage": {}
+        },
+        {
+            "@id": "https://data.vlaanderen.be/ns/gebouw#Gebouw",
+            "@type": "http://www.w3.org/2002/07/owl#Class",
+            "name": {
+                "nl": "Gebouw"
+            },
+            "description": {
+                "nl": "Een gesloten en/of overdekt, bovengronds of ondergronds bouwwerk, dat dient of bestemd is, ofwel om mensen, dieren en voorwerpen onder te brengen, ofwel om economische goederen te vervaardigen of diensten te verstrekken. Een gebouw verwijst naar gelijk welke structuur die op blijvende wijze op een terrein opgetrokken of gebouwd wordt."
+            },
+            "usage": {}
+        },
+        {
+            "@id": "https://data.vlaanderen.be/ns/gebouw#Gebouweenheid",
+            "@type": "http://www.w3.org/2002/07/owl#Class",
+            "name": {
+                "nl": "Gebouweenheid"
+            },
+            "description": {
+                "nl": "De kleinste eenheid binnen een gebouw die geschikt is voor woon-, bedrijfsmatige, of recreatieve doeleinden en die ontsloten wordt via een eigen afsluitbare toegang vanaf de openbare weg, een erf of een gedeelde circulatieruimte. Een gebouweenheid is in functioneel opzicht zelfstandig. Daarnaast kan een gebouweenheid ook een gemeenschappelijk deel zijn."
+            },
+            "usage": {}
+        },
+        {
+            "@id": "https://data.vlaanderen.be/ns/perceel#Perceel",
+            "@type": "http://www.w3.org/2002/07/owl#Class",
+            "name": {
+                "nl": "Perceel"
+            },
+            "description": {
+                "nl": "Deel van het grondgebied officieel vastgesteld met een kadastraal of administratief doel."
+            },
+            "usage": {}
+        }
+    ],
+    "properties": [
+        {
+            "@id": "https://data.vlaanderen.be/ns/gebouw#bestaatUit",
+            "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
+            "name": {
+                "nl": "bestaat uit"
+            },
+            "description": {
+                "nl": "De percelen waarmee het gebouw officieel geassocieerd is."
+            },
+            "usage": {},
+            "domain": [
+                "https://data.vlaanderen.be/ns/gebouw#Gebouw"
+            ],
+            "range": [
+                "https://data.vlaanderen.be/ns/gebouw#Gebouweenheid"
+            ],
+            "generalization": []
+        },
+        {
+            "@id": "https://data.vlaanderen.be/ns/adres#verwijstNaar",
+            "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
+            "name": {
+                "nl": "verwijst naar"
+            },
+            "description": {
+                "nl": "Adres waarvan de adresvoorstelling is afgeleid."
+            },
+            "usage": {},
+            "domain": [
+                "http://www.w3.org/ns/locn#Address"
+            ],
+            "range": [
+                "https://data.vlaanderen.be/ns/adres#Adres"
+            ],
+            "generalization": []
+        },
+        {
+            "@id": "https://data.vlaanderen.be/ns/gebouw#ligtOp",
+            "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
+            "name": {
+                "nl": "ligt op"
+            },
+            "description": {
+                "nl": "De gebouweenheden die tot het gebouw behoren."
+            },
+            "usage": {},
+            "domain": [
+                "https://data.vlaanderen.be/ns/gebouw#Gebouw"
+            ],
+            "range": [
+                "https://data.vlaanderen.be/ns/perceel#Perceel"
+            ],
+            "generalization": []
+        },
+        {
+            "@id": "https://data.vlaanderen.be/ns/adres#isToegekendAan",
+            "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
+            "name": {
+                "nl": "is toegekend aan"
+            },
+            "description": {
+                "nl": "Adresseerbaar object waaraan het adres is toegekend."
+            },
+            "usage": {},
+            "domain": [
+                "https://data.vlaanderen.be/ns/adres#Adres"
+            ],
+            "range": [
+                "https://data.vlaanderen.be/ns/adres#AdresseerbaarObject"
+            ],
+            "generalization": []
+        },
+        {
+            "@id": "http://www.opengis.net/ont/geosparql#asGML",
+            "@type": "http://www.w3.org/2002/07/owl#DatatypeProperty",
+            "name": {
+                "nl": "als GML"
+            },
+            "description": {
+                "nl": "TODO"
+            },
+            "usage": {},
+            "domain": [
+                "http://www.w3.org/ns/locn#Geometry"
+            ],
+            "range": [
+                "http://www.w3.org/2000/01/rdf-schema#Literal"
+            ],
+            "generalization": [],
+            "minCardinality": "1",
+            "maxCardinality": "1"
+        },
+        {
+            "@id": "http://www.opengis.net/ont/geosparql#asWKT",
+            "@type": "http://www.w3.org/2002/07/owl#DatatypeProperty",
+            "name": {
+                "nl": "als WKT"
+            },
+            "description": {
+                "nl": "TODO"
+            },
+            "usage": {},
+            "domain": [
+                "http://www.w3.org/ns/locn#Geometry"
+            ],
+            "range": [
+                "http://www.w3.org/2000/01/rdf-schema#Literal"
+            ],
+            "generalization": [],
+            "minCardinality": "1",
+            "maxCardinality": "1"
+        },
+        {
+            "@id": "https://data.vlaanderen.be/ns/gebouw#default",
+            "@type": "http://www.w3.org/2002/07/owl#DatatypeProperty",
+            "name": {
+                "nl": "default"
+            },
+            "description": {
+                "nl": "Geometrie die moet worden gebruikt bv bij voorstelling op kaart."
+            },
+            "usage": {},
+            "domain": [
+                "https://data.vlaanderen.be/ns/gebouw#2DGebouwgeometrie"
+            ],
+            "range": [
+                "http://www.w3.org/2001/XMLSchema#boolean"
+            ],
+            "generalization": [],
+            "minCardinality": "1",
+            "maxCardinality": "1"
+        },
+        {
+            "@id": "https://data.vlaanderen.be/ns/gebouw#geometrie",
+            "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
+            "name": {
+                "nl": "geometrie"
+            },
+            "description": {
+                "nl": "2D geometrische voorstelling van het gebouw."
+            },
+            "usage": {},
+            "domain": [
+                "https://data.vlaanderen.be/ns/gebouw#2DGebouwgeometrie"
+            ],
+            "range": [
+                "http://www.w3.org/ns/locn#Geometry"
+            ],
+            "generalization": [],
+            "minCardinality": "1",
+            "maxCardinality": "1"
+        },
+        {
+            "@id": "https://data.vlaanderen.be/ns/gebouw#horizontaleReferentie",
+            "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
+            "name": {
+                "nl": "horizontale referentie"
+            },
+            "description": {
+                "nl": "Aspect van het object dat door de xy-coördinaten wordt voorgesteld."
+            },
+            "usage": {},
+            "domain": [
+                "https://data.vlaanderen.be/ns/gebouw#2DGebouwgeometrie"
+            ],
+            "range": [
+                "http://www.w3.org/2004/02/skos/core#Concept"
+            ],
+            "generalization": [],
+            "minCardinality": "1",
+            "maxCardinality": "1"
+        },
+        {
+            "@id": "https://data.vlaanderen.be/ns/gebouw#methode",
+            "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
+            "name": {
+                "nl": "methode"
+            },
+            "description": {
+                "nl": "Beschrijving van de manier waarop de geometrie aangemaakt werd."
+            },
+            "usage": {},
+            "domain": [
+                "https://data.vlaanderen.be/ns/gebouw#2DGebouwgeometrie"
+            ],
+            "range": [
+                "https://data.vlaanderen.be/ns/gebouw#2DGeometrieMethodeWaarde"
+            ],
+            "generalization": [],
+            "minCardinality": "1",
+            "maxCardinality": "1"
+        },
+        {
+            "@id": "https://data.vlaanderen.be/ns/gebouw#verticaleReferentie",
+            "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
+            "name": {
+                "nl": "verticale referentie"
+            },
+            "description": {
+                "nl": "Aspect van het object dat door de z-coördinaten wordt voorgesteld."
+            },
+            "usage": {},
+            "domain": [
+                "https://data.vlaanderen.be/ns/gebouw#2DGebouwgeometrie"
+            ],
+            "range": [
+                "http://www.w3.org/2004/02/skos/core#Concept"
+            ],
+            "generalization": [],
+            "minCardinality": "1",
+            "maxCardinality": "1"
+        },
+        {
+            "@id": "https://data.vlaanderen.be/ns/adres#Locatieaanduiding.aanduiding",
+            "@type": "http://www.w3.org/2002/07/owl#DatatypeProperty",
+            "name": {
+                "nl": "aanduiding"
+            },
+            "description": {
+                "nl": "Alfanumerieke code waarmee het identificerend deel van een adreslocator wordt aangeduid."
+            },
+            "usage": {},
+            "domain": [
+                "https://data.vlaanderen.be/ns/adres#Locatieaanduiding"
+            ],
+            "range": [
+                "http://www.w3.org/2001/XMLSchema#string"
+            ],
+            "generalization": [],
+            "minCardinality": "1",
+            "maxCardinality": "1"
+        },
+        {
+            "@id": "https://data.vlaanderen.be/ns/adres#Locatieaanduiding.type",
+            "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
+            "name": {
+                "nl": "type"
+            },
+            "description": {
+                "nl": "Aard vd locatieaanduiding."
+            },
+            "usage": {},
+            "domain": [
+                "https://data.vlaanderen.be/ns/adres#Locatieaanduiding"
+            ],
+            "range": [
+                "http://www.w3.org/2004/02/skos/core#Concept"
+            ],
+            "generalization": [],
+            "minCardinality": "1",
+            "maxCardinality": "1"
+        },
+        {
+            "@id": "https://data.vlaanderen.be/ns/generiek#Gebeurtenisdatum.begin",
+            "@type": "http://www.w3.org/2002/07/owl#DatatypeProperty",
+            "name": {
+                "nl": "begin"
+            },
+            "description": {
+                "nl": "Datum en tijd waarop de gebeurtenis startte."
+            },
+            "usage": {},
+            "domain": [
+                "https://data.vlaanderen.be/ns/generiek#Gebeurtenisdatum"
+            ],
+            "range": [
+                "http://www.w3.org/2001/XMLSchema#dateTime"
+            ],
+            "generalization": [],
+            "minCardinality": "1",
+            "maxCardinality": "1"
+        },
+        {
+            "@id": "https://data.vlaanderen.be/ns/generiek#Gebeurtenisdatum.einde",
+            "@type": "http://www.w3.org/2002/07/owl#DatatypeProperty",
+            "name": {
+                "nl": "einde"
+            },
+            "description": {
+                "nl": "Datum en tijd waarop de gebeurtenis eindigde."
+            },
+            "usage": {},
+            "domain": [
+                "https://data.vlaanderen.be/ns/generiek#Gebeurtenisdatum"
+            ],
+            "range": [
+                "http://www.w3.org/2001/XMLSchema#dateTime"
+            ],
+            "generalization": [],
+            "minCardinality": "1",
+            "maxCardinality": "1"
+        },
+        {
+            "@id": "https://data.vlaanderen.be/ns/generiek#tussentijdstip",
+            "@type": "http://www.w3.org/2002/07/owl#DatatypeProperty",
+            "name": {
+                "nl": "tussentijdstip"
+            },
+            "description": {
+                "nl": "Datum en tijd van een moment tussen begin en einde."
+            },
+            "usage": {},
+            "domain": [
+                "https://data.vlaanderen.be/ns/generiek#Gebeurtenisdatum"
+            ],
+            "range": [
+                "http://www.w3.org/2001/XMLSchema#dateTime"
+            ],
+            "generalization": [],
+            "minCardinality": "1",
+            "maxCardinality": "1"
+        },
+        {
+            "@id": "http://www.w3.org/ns/locn#adminUnitL1",
+            "@type": "http://www.w3.org/2002/07/owl#DatatypeProperty",
+            "name": {
+                "nl": "administratieve eenheid niveau 1"
+            },
+            "description": {
+                "nl": "TODO"
+            },
+            "usage": {},
+            "domain": [
+                "http://www.w3.org/ns/locn#Address"
+            ],
+            "range": [
+                "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
+            ],
+            "generalization": [],
+            "minCardinality": "1",
+            "maxCardinality": "1"
+        },
+        {
+            "@id": "http://www.w3.org/ns/locn#adminUnitL2",
+            "@type": "http://www.w3.org/2002/07/owl#DatatypeProperty",
+            "name": {
+                "nl": "administratieve eenheid niveau 2"
+            },
+            "description": {
+                "nl": "TODO"
+            },
+            "usage": {},
+            "domain": [
+                "http://www.w3.org/ns/locn#Address"
+            ],
+            "range": [
+                "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
+            ],
+            "generalization": [],
+            "minCardinality": "1",
+            "maxCardinality": "1"
+        },
+        {
+            "@id": "http://www.w3.org/ns/locn#addressArea",
+            "@type": "http://www.w3.org/2002/07/owl#DatatypeProperty",
+            "name": {
+                "nl": "adresgebied"
+            },
+            "description": {
+                "nl": "TODO"
+            },
+            "usage": {},
+            "domain": [
+                "http://www.w3.org/ns/locn#Address"
+            ],
+            "range": [
+                "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
+            ],
+            "generalization": [],
+            "minCardinality": "1",
+            "maxCardinality": "1"
+        },
+        {
+            "@id": "https://data.vlaanderen.be/ns/adres#Adresvoorstelling.busnummer",
+            "@type": "http://www.w3.org/2002/07/owl#DatatypeProperty",
+            "name": {
+                "nl": "busnummer"
+            },
+            "description": {
+                "nl": "Officieel toegekende alfanumerieke code die wordt toegevoegd aan het huisnummer om meerdere gebouweenheden, standplaatsen, ligplaatsen of percelen te onderscheiden die eenzelfde huisnummer hebben."
+            },
+            "usage": {},
+            "domain": [
+                "http://www.w3.org/ns/locn#Address"
+            ],
+            "range": [
+                "http://www.w3.org/2001/XMLSchema#string"
+            ],
+            "generalization": [
+                "http://www.w3.org/ns/locn#locatorDesignator"
+            ],
+            "minCardinality": "1",
+            "maxCardinality": "1"
+        },
+        {
+            "@id": "https://data.vlaanderen.be/ns/adres#gemeentenaam",
+            "@type": "http://www.w3.org/2002/07/owl#DatatypeProperty",
+            "name": {
+                "nl": "gemeentenaam"
+            },
+            "description": {
+                "nl": "Gemeentenaam vh adres."
+            },
+            "usage": {},
+            "domain": [
+                "http://www.w3.org/ns/locn#Address"
+            ],
+            "range": [
+                "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
+            ],
+            "generalization": [
+                "http://www.w3.org/ns/locn#postName"
+            ],
+            "minCardinality": "1",
+            "maxCardinality": "1"
+        },
+        {
+            "@id": "https://data.vlaanderen.be/ns/adres#Adresvoorstelling.huisnummer",
+            "@type": "http://www.w3.org/2002/07/owl#DatatypeProperty",
+            "name": {
+                "nl": "huisnummer"
+            },
+            "description": {
+                "nl": "Alfanumerieke code officieel toegekend aan gebouweenheden, ligplaatsen, standplaatsen of percelen."
+            },
+            "usage": {},
+            "domain": [
+                "http://www.w3.org/ns/locn#Address"
+            ],
+            "range": [
+                "http://www.w3.org/2001/XMLSchema#string"
+            ],
+            "generalization": [
+                "http://www.w3.org/ns/locn#locatorDesignator"
+            ],
+            "minCardinality": "1",
+            "maxCardinality": "1"
+        },
+        {
+            "@id": "https://data.vlaanderen.be/ns/adres#land",
+            "@type": "http://www.w3.org/2002/07/owl#DatatypeProperty",
+            "name": {
+                "nl": "land"
+            },
+            "description": {
+                "nl": "Land waarin het adres gelegen is."
+            },
+            "usage": {},
+            "domain": [
+                "http://www.w3.org/ns/locn#Address"
+            ],
+            "range": [
+                "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
+            ],
+            "generalization": [
+                "http://www.w3.org/ns/locn#adminUnitL1"
+            ],
+            "minCardinality": "1",
+            "maxCardinality": "1"
+        },
+        {
+            "@id": "http://www.w3.org/ns/locn#locatorDesignator",
+            "@type": "http://www.w3.org/2002/07/owl#DatatypeProperty",
+            "name": {
+                "nl": "locatieaanduiding"
+            },
+            "description": {
+                "nl": "TODO"
+            },
+            "usage": {},
+            "domain": [
+                "http://www.w3.org/ns/locn#Address"
+            ],
+            "range": [
+                "http://www.w3.org/2001/XMLSchema#string"
+            ],
+            "generalization": [],
+            "minCardinality": "1",
+            "maxCardinality": "1"
+        },
+        {
+            "@id": "http://www.w3.org/ns/locn#locatorName",
+            "@type": "http://www.w3.org/2002/07/owl#DatatypeProperty",
+            "name": {
+                "nl": "locatienaam"
+            },
+            "description": {
+                "nl": "TODO"
+            },
+            "usage": {},
+            "domain": [
+                "http://www.w3.org/ns/locn#Address"
+            ],
+            "range": [
+                "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
+            ],
+            "generalization": [],
+            "minCardinality": "1",
+            "maxCardinality": "1"
+        },
+        {
+            "@id": "http://www.w3.org/ns/locn#poBox",
+            "@type": "http://www.w3.org/2002/07/owl#DatatypeProperty",
+            "name": {
+                "nl": "postbus"
+            },
+            "description": {
+                "nl": "TODO"
+            },
+            "usage": {},
+            "domain": [
+                "http://www.w3.org/ns/locn#Address"
+            ],
+            "range": [
+                "http://www.w3.org/2001/XMLSchema#string"
+            ],
+            "generalization": [],
+            "minCardinality": "1",
+            "maxCardinality": "1"
+        },
+        {
+            "@id": "http://www.w3.org/ns/locn#postCode",
+            "@type": "http://www.w3.org/2002/07/owl#DatatypeProperty",
+            "name": {
+                "nl": "postcode"
+            },
+            "description": {
+                "nl": "TODO"
+            },
+            "usage": {},
+            "domain": [
+                "http://www.w3.org/ns/locn#Address"
+            ],
+            "range": [
+                "http://www.w3.org/2001/XMLSchema#string"
+            ],
+            "generalization": [],
+            "minCardinality": "1",
+            "maxCardinality": "1"
+        },
+        {
+            "@id": "http://www.w3.org/ns/locn#postName",
+            "@type": "http://www.w3.org/2002/07/owl#DatatypeProperty",
+            "name": {
+                "nl": "postnaam"
+            },
+            "description": {
+                "nl": "TODO"
+            },
+            "usage": {},
+            "domain": [
+                "http://www.w3.org/ns/locn#Address"
+            ],
+            "range": [
+                "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
+            ],
+            "generalization": [],
+            "minCardinality": "1",
+            "maxCardinality": "1"
+        },
+        {
+            "@id": "http://www.w3.org/ns/locn#thoroughfare",
+            "@type": "http://www.w3.org/2002/07/owl#DatatypeProperty",
+            "name": {
+                "nl": "straatnaam"
+            },
+            "description": {
+                "nl": "TODO"
+            },
+            "usage": {},
+            "domain": [
+                "http://www.w3.org/ns/locn#Address"
+            ],
+            "range": [
+                "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
+            ],
+            "generalization": [],
+            "minCardinality": "1",
+            "maxCardinality": "1"
+        },
+        {
+            "@id": "http://www.w3.org/ns/locn#fullAddress",
+            "@type": "http://www.w3.org/2002/07/owl#DatatypeProperty",
+            "name": {
+                "nl": "volledig adres"
+            },
+            "description": {
+                "nl": "TODO"
+            },
+            "usage": {},
+            "domain": [
+                "http://www.w3.org/ns/locn#Address"
+            ],
+            "range": [
+                "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
+            ],
+            "generalization": [],
+            "minCardinality": "1",
+            "maxCardinality": "1"
+        },
+        {
+            "@id": "https://data.vlaanderen.be/ns/adres#busnummer",
+            "@type": "http://www.w3.org/2002/07/owl#DatatypeProperty",
+            "name": {
+                "nl": "busnummer"
+            },
+            "description": {
+                "nl": "Officieel toegekende alfanumerieke code die wordt toegevoegd aan het huisnummer om meerdere gebouweenheden, standplaatsen, ligplaatsen of percelen te onderscheiden die eenzelfde huisnummer hebben."
+            },
+            "usage": {},
+            "domain": [
+                "https://data.vlaanderen.be/ns/adres#Adres"
+            ],
+            "range": [
+                "http://www.w3.org/2001/XMLSchema#string"
+            ],
+            "generalization": [],
+            "minCardinality": "1",
+            "maxCardinality": "1"
+        },
+        {
+            "@id": "https://data.vlaanderen.be/ns/adres#huisnummer",
+            "@type": "http://www.w3.org/2002/07/owl#DatatypeProperty",
+            "name": {
+                "nl": "huisnummer"
+            },
+            "description": {
+                "nl": "Alfanumerieke code officieel toegekend aan gebouweenheden, ligplaatsen, standplaatsen of percelen."
+            },
+            "usage": {},
+            "domain": [
+                "https://data.vlaanderen.be/ns/adres#Adres"
+            ],
+            "range": [
+                "http://www.w3.org/2001/XMLSchema#string"
+            ],
+            "generalization": [],
+            "minCardinality": "1",
+            "maxCardinality": "1"
+        },
+        {
+            "@id": "https://data.vlaanderen.be/ns/adres#officieelToegekend",
+            "@type": "http://www.w3.org/2002/07/owl#DatatypeProperty",
+            "name": {
+                "nl": "officieel toegekend"
+            },
+            "description": {
+                "nl": "Geeft aan of het adres officieel door de adresbeheerder is toegekend."
+            },
+            "usage": {},
+            "domain": [
+                "https://data.vlaanderen.be/ns/adres#Adres"
+            ],
+            "range": [
+                "http://www.w3.org/2001/XMLSchema#boolean"
+            ],
+            "generalization": [],
+            "minCardinality": "1",
+            "maxCardinality": "1"
+        },
+        {
+            "@id": "https://data.vlaanderen.be/ns/adres#positie",
+            "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
+            "name": {
+                "nl": "positie"
+            },
+            "description": {
+                "nl": "Positie van een karakeristiek punt dat de positie van het adres vertegenwoordigt volgens een bepaalde specificatie en inclusief informatie over de herkomst van de positie."
+            },
+            "usage": {},
+            "domain": [
+                "https://data.vlaanderen.be/ns/adres#Adres"
+            ],
+            "range": [
+                "https://data.vlaanderen.be/ns/generiek#GeografischePositie"
+            ],
+            "generalization": [
+                "http://www.w3.org/ns/locn#geometry"
+            ],
+            "minCardinality": "1",
+            "maxCardinality": "1"
+        },
+        {
+            "@id": "https://data.vlaanderen.be/ns/adres#Adres.status",
+            "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
+            "name": {
+                "nl": "status"
+            },
+            "description": {
+                "nl": "Actuele toestand van het adres."
+            },
+            "usage": {},
+            "domain": [
+                "https://data.vlaanderen.be/ns/adres#Adres"
+            ],
+            "range": [
+                "http://www.w3.org/2004/02/skos/core#Concept"
+            ],
+            "generalization": [],
+            "minCardinality": "1",
+            "maxCardinality": "1"
+        },
+        {
+            "@id": "https://data.vlaanderen.be/ns/gebouw#aantalBovengrondseVerdiepingen",
+            "@type": "http://www.w3.org/2002/07/owl#DatatypeProperty",
+            "name": {
+                "nl": "aantal bovengrondse verdiepingen"
+            },
+            "description": {
+                "nl": "Totaal van het aantal bovengrondse gebouwlagen, bekeken over alle gebouwdelen heen."
+            },
+            "usage": {},
+            "domain": [
+                "https://data.vlaanderen.be/ns/gebouw#Gebouw"
+            ],
+            "range": [
+                "http://www.w3.org/2001/XMLSchema#integer"
+            ],
+            "generalization": [],
+            "minCardinality": "1",
+            "maxCardinality": "1"
+        },
+        {
+            "@id": "https://data.vlaanderen.be/ns/gebouw#aantalOndergrondseVerdiepingen",
+            "@type": "http://www.w3.org/2002/07/owl#DatatypeProperty",
+            "name": {
+                "nl": "aantal ondergrondse verdiepingen"
+            },
+            "description": {
+                "nl": "Totaal van het aantal ondergrondse gebouwlagen, bekeken over alle gebouwdelen heen."
+            },
+            "usage": {},
+            "domain": [
+                "https://data.vlaanderen.be/ns/gebouw#Gebouw"
+            ],
+            "range": [
+                "http://www.w3.org/2001/XMLSchema#integer"
+            ],
+            "generalization": [],
+            "minCardinality": "1",
+            "maxCardinality": "1"
+        },
+        {
+            "@id": "https://data.vlaanderen.be/ns/gebouw#Gebouw.adres",
+            "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
+            "name": {
+                "nl": "adres"
+            },
+            "description": {
+                "nl": "Adres van het gebouw."
+            },
+            "usage": {},
+            "domain": [
+                "https://data.vlaanderen.be/ns/gebouw#Gebouw"
+            ],
+            "range": [
+                "http://www.w3.org/ns/locn#Address"
+            ],
+            "generalization": [],
+            "minCardinality": "1",
+            "maxCardinality": "1"
+        },
+        {
+            "@id": "https://data.vlaanderen.be/ns/gebouw#bouwjaar",
+            "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
+            "name": {
+                "nl": "bouwjaar"
+            },
+            "description": {
+                "nl": "Datum waarop het gebouw voltooid werd."
+            },
+            "usage": {},
+            "domain": [
+                "https://data.vlaanderen.be/ns/gebouw#Gebouw"
+            ],
+            "range": [
+                "https://data.vlaanderen.be/ns/generiek#Gebeurtenisdatum"
+            ],
+            "generalization": [],
+            "minCardinality": "1",
+            "maxCardinality": "1"
+        },
+        {
+            "@id": "https://data.vlaanderen.be/ns/gebouw#gebouwnaam",
+            "@type": "http://www.w3.org/2002/07/owl#DatatypeProperty",
+            "name": {
+                "nl": "gebouwnaam"
+            },
+            "description": {
+                "nl": "Naam van het gebouw."
+            },
+            "usage": {},
+            "domain": [
+                "https://data.vlaanderen.be/ns/gebouw#Gebouw"
+            ],
+            "range": [
+                "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
+            ],
+            "generalization": [],
+            "minCardinality": "1",
+            "maxCardinality": "1"
+        },
+        {
+            "@id": "https://data.vlaanderen.be/ns/gebouw#Gebouw.geometrie",
+            "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
+            "name": {
+                "nl": "geometrie"
+            },
+            "description": {
+                "nl": "2D geometrische voorstelling van het gebouw."
+            },
+            "usage": {},
+            "domain": [
+                "https://data.vlaanderen.be/ns/gebouw#Gebouw"
+            ],
+            "range": [
+                "https://data.vlaanderen.be/ns/gebouw#2DGebouwgeometrie"
+            ],
+            "generalization": [],
+            "minCardinality": "1",
+            "maxCardinality": "1"
+        },
+        {
+            "@id": "https://data.vlaanderen.be/ns/gebouw#laatsteRenovatie",
+            "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
+            "name": {
+                "nl": "laatste renovatie"
+            },
+            "description": {
+                "nl": "Datum waarop het gebouw het laatst gerenoveerd werd."
+            },
+            "usage": {},
+            "domain": [
+                "https://data.vlaanderen.be/ns/gebouw#Gebouw"
+            ],
+            "range": [
+                "https://data.vlaanderen.be/ns/generiek#Gebeurtenisdatum"
+            ],
+            "generalization": [],
+            "minCardinality": "1",
+            "maxCardinality": "1"
+        },
+        {
+            "@id": "https://data.vlaanderen.be/ns/gebouw#Gebouw.status",
+            "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
+            "name": {
+                "nl": "status"
+            },
+            "description": {
+                "nl": "Fase van de levensloop waarin het gebouw zich bevindt."
+            },
+            "usage": {},
+            "domain": [
+                "https://data.vlaanderen.be/ns/gebouw#Gebouw"
+            ],
+            "range": [
+                "http://www.w3.org/2004/02/skos/core#Concept"
+            ],
+            "generalization": [],
+            "minCardinality": "1",
+            "maxCardinality": "1"
+        },
+        {
+            "@id": "https://data.vlaanderen.be/ns/gebouw#Gebouweenheid.adres",
+            "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
+            "name": {
+                "nl": "adres"
+            },
+            "description": {
+                "nl": "Adres vd gebouweenheid."
+            },
+            "usage": {},
+            "domain": [
+                "https://data.vlaanderen.be/ns/gebouw#Gebouweenheid"
+            ],
+            "range": [
+                "http://www.w3.org/ns/locn#Address"
+            ],
+            "generalization": [],
+            "minCardinality": "1",
+            "maxCardinality": "1"
+        },
+        {
+            "@id": "https://data.vlaanderen.be/ns/gebouw#functie",
+            "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
+            "name": {
+                "nl": "functie"
+            },
+            "description": {
+                "nl": "Functie waarvoor de gebouweenheid in de realiteit (zoals vastgesteld op het terrein) gebruikt wordt."
+            },
+            "usage": {},
+            "domain": [
+                "https://data.vlaanderen.be/ns/gebouw#Gebouweenheid"
+            ],
+            "range": [
+                "http://www.w3.org/2004/02/skos/core#Concept"
+            ],
+            "generalization": [],
+            "minCardinality": "1",
+            "maxCardinality": "1"
+        },
+        {
+            "@id": "https://data.vlaanderen.be/ns/gebouw#Gebouweenheid.geometrie",
+            "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
+            "name": {
+                "nl": "geometrie"
+            },
+            "description": {
+                "nl": "2D geometrische voorstelling van de gebouweenheid."
+            },
+            "usage": {},
+            "domain": [
+                "https://data.vlaanderen.be/ns/gebouw#Gebouweenheid"
+            ],
+            "range": [
+                "http://www.w3.org/ns/locn#Geometry"
+            ],
+            "generalization": [],
+            "minCardinality": "1",
+            "maxCardinality": "1"
+        },
+        {
+            "@id": "https://data.vlaanderen.be/ns/gebouw#locatieAanduiding",
+            "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
+            "name": {
+                "nl": "locatie-aanduiding"
+            },
+            "description": {
+                "nl": "Alfanumerieke code die een adreslocator uniek identificeert binnen de straat, administratieve eenheid etc."
+            },
+            "usage": {},
+            "domain": [
+                "https://data.vlaanderen.be/ns/gebouw#Gebouweenheid"
+            ],
+            "range": [
+                "https://data.vlaanderen.be/ns/adres#Locatieaanduiding"
+            ],
+            "generalization": [],
+            "minCardinality": "1",
+            "maxCardinality": "1"
+        },
+        {
+            "@id": "https://data.vlaanderen.be/ns/gebouw#Gebouweenheid.status",
+            "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
+            "name": {
+                "nl": "gebouweenheidstatus"
+            },
+            "description": {
+                "nl": "Fase van de levensloop waarin de gebouweenheid zich bevindt."
+            },
+            "usage": {},
+            "domain": [
+                "https://data.vlaanderen.be/ns/gebouw#Gebouweenheid"
+            ],
+            "range": [
+                "https://data.vlaanderen.be/ns/gebouw#GebouweenheidstatusWaarde"
+            ],
+            "generalization": [],
+            "minCardinality": "1",
+            "maxCardinality": "1"
+        },
+        {
+            "@id": "https://data.vlaanderen.be/ns/perceel#adres",
+            "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
+            "name": {
+                "nl": "TODO"
+            },
+            "description": {},
+            "usage": {},
+            "domain": [
+                "https://data.vlaanderen.be/ns/perceel#Perceel"
+            ],
+            "range": [
+                "http://www.w3.org/ns/locn#Address"
+            ],
+            "generalization": [],
+            "minCardinality": "0",
+            "maxCardinality": "1"
+        },
+        {
+            "@id": "https://data.vlaanderen.be/ns/perceel#geldigheidsperiode",
+            "@type": "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property",
+            "name": {
+                "nl": "TODO"
+            },
+            "description": {},
+            "usage": {},
+            "domain": [
+                "https://data.vlaanderen.be/ns/perceel#Perceel"
+            ],
+            "range": [],
+            "generalization": [],
+            "minCardinality": "0",
+            "maxCardinality": "1"
+        },
+        {
+            "@id": "https://data.vlaanderen.be/ns/perceel#geometrie",
+            "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
+            "name": {
+                "nl": "TODO"
+            },
+            "description": {},
+            "usage": {},
+            "domain": [
+                "https://data.vlaanderen.be/ns/perceel#Perceel"
+            ],
+            "range": [
+                "http://www.w3.org/ns/locn#Geometry"
+            ],
+            "generalization": [],
+            "minCardinality": "1",
+            "maxCardinality": "1"
+        }
+    ],
+    "externals": [
+        {
+            "name": {
+                "nl": "22-rdf-syntax-ns"
+            },
+            "@id": "http://www.w3.org/1999/02/22-rdf-syntax-ns",
+            "@type": "http://www.w3.org/2000/01/rdf-schema#Class"
+        },
+        {
+            "name": {
+                "nl": "locn"
+            },
+            "@id": "http://www.w3.org/ns/locn",
+            "@type": "http://www.w3.org/2000/01/rdf-schema#Class"
+        },
+        {
+            "name": {
+                "nl": "owl"
+            },
+            "@id": "http://www.w3.org/2002/07/owl",
+            "@type": "http://www.w3.org/2000/01/rdf-schema#Class"
+        },
+        {
+            "name": {
+                "nl": "rdf-schema"
+            },
+            "@id": "http://www.w3.org/2000/01/rdf-schema",
+            "@type": "http://www.w3.org/2000/01/rdf-schema#Class"
+        },
+        {
+            "name": {
+                "nl": "XMLSchema"
+            },
+            "@id": "http://www.w3.org/2001/XMLSchema",
+            "@type": "http://www.w3.org/2000/01/rdf-schema#Class"
+        },
+        {
+            "name": {
+                "nl": "adres"
+            },
+            "@id": "https://data.vlaanderen.be/ns/adres",
+            "@type": "http://www.w3.org/2000/01/rdf-schema#Class"
+        },
+        {
+            "name": {
+                "nl": "perceel"
+            },
+            "@id": "https://data.vlaanderen.be/ns/perceel",
+            "@type": "http://www.w3.org/2000/01/rdf-schema#Class"
+        },
+        {
+            "name": {
+                "nl": "generiek"
+            },
+            "@id": "https://data.vlaanderen.be/ns/generiek",
+            "@type": "http://www.w3.org/2000/01/rdf-schema#Class"
+        },
+        {
+            "name": {
+                "nl": "core"
+            },
+            "@id": "http://www.w3.org/2004/02/skos/core",
+            "@type": "http://www.w3.org/2000/01/rdf-schema#Class"
+        }
+    ]
+}

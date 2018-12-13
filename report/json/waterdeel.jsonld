@@ -1,0 +1,844 @@
+{
+    "@context": {
+        "vlaanderen": "http://data.vlaanderen.be/ns/",
+        "owl": "http://www.w3.org/2002/07/owl#",
+        "void": "http://rdfs.org/ns/void#",
+        "dcterms": "http://purl.org/dc/terms/",
+        "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+        "dcat": "http://www.w3.org/ns/dcat#",
+        "sdmx-dimension": "http://purl.org/linked-data/sdmx/2009/dimension#",
+        "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+        "sdmx-attribute": "http://purl.org/linked-data/sdmx/2009/attribute#",
+        "qb": "http://purl.org/linked-data/cube#",
+        "skos": "http://www.w3.org/2004/02/skos/core#",
+        "xsd": "http://www.w3.org/2001/XMLSchema#",
+        "sdmx-concept": "http://purl.org/linked-data/sdmx/2009/concept#",
+        "foaf": "http://xmlns.com/foaf/0.1/",
+        "person": "http://www.w3.org/ns/person#",
+        "rec": "http://www.w3.org/2001/02pd/rec54#",
+        "vann": "http://purl.org/vocab/vann/",
+        "sh": "http://w3.org/ns/shacl#",
+        "label": {
+            "@id": "rdfs:label",
+            "@container": "@language"
+        },
+        "modified": {
+            "@id": "dcterms:modified",
+            "@type": "xsd:date"
+        },
+        "issued": {
+            "@id": "dcterms:issued"
+        },
+        "authors": {
+            "@type": "person:Person",
+            "@id": "foaf:maker"
+        },
+        "editors": {
+            "@type": "person:Person",
+            "@id": "rec:editor"
+        },
+        "contributors": {
+            "@type": "person:Person",
+            "@id": "dcterms:contributor"
+        },
+        "affiliation": {
+            "@id": "http://schema.org/affiliation"
+        },
+        "classes": {
+            "@reverse": "rdfs:isDefinedBy"
+        },
+        "datatypes": {
+            "@reverse": "rdfs:isDefinedBy"
+        },
+        "name": {
+            "@id": "rdfs:label",
+            "@container": "@language"
+        },
+        "description": {
+            "@id": "rdfs:comment",
+            "@container": "@language"
+        },
+        "properties": {
+            "@reverse": "rdfs:isDefinedBy"
+        },
+        "domain": {
+            "@id": "rdfs:domain"
+        },
+        "range": {
+            "@id": "rdfs:range"
+        },
+        "minCardinality": {
+            "@id": "sh:minCount"
+        },
+        "maxCardinality": {
+            "@id": "sh:maxCount"
+        },
+        "generalization": {
+            "@id": "rdfs:subPropertyOf"
+        },
+        "externals": {
+            "@type": "http://www.w3.org/2000/01/rdf-schema#Class",
+            "@id": "rdfs:seeAlso"
+        },
+        "usage": {
+            "@id": "vann:usageNote",
+            "@container": "@language"
+        }
+    },
+    "@id": "http://data.vlaanderen.be/ns/openbaardomein/waterdeel",
+    "@type": "http://www.w3.org/2002/07/owl#Ontology",
+    "label": {
+        "nl": "waterdeel",
+        "en": "waterdeel"
+    },
+    "authors": [
+        {
+            "foaf:first_name": "Tim",
+            "foaf:last_name": "Baert",
+            "affiliation": {
+                "foaf:name": "Ugent"
+            },
+            "foaf:mbox": "tim.baert@ugent.be",
+            "@type": "person:Person"
+        }
+    ],
+    "editors": [
+        {
+            "foaf:first_name": "Jens",
+            "foaf:last_name": "Scheerlinck",
+            "affiliation": {
+                "foaf:name": "PwC",
+                "foaf:homepage": "http://www.pwc.be"
+            },
+            "foaf:mbox": "jens.scheerlinck@pwc.com",
+            "@type": "person:Person"
+        }
+    ],
+    "contributors": [
+        {
+            "foaf:first_name": "Tom",
+            "foaf:last_name": "Van Herck",
+            "affiliation": {
+                "foaf:name": "Informatie Vlaanderen"
+            },
+            "foaf:mbox": "Tom.vanherck@kb.vlaanderen.be",
+            "@type": "person:Person"
+        },
+        {
+            "foaf:first_name": "Joris",
+            "foaf:last_name": "Verbeken",
+            "affiliation": {
+                "foaf:name": "Stad Aalst"
+            },
+            "foaf:mbox": "joris.verbeken@aalst.be",
+            "@type": "person:Person"
+        },
+        {
+            "foaf:first_name": "Kristien",
+            "foaf:last_name": "De Rouck",
+            "affiliation": {
+                "foaf:name": "Hogeschool Gent"
+            },
+            "foaf:mbox": "kristien.derouck@hogent.be",
+            "@type": "person:Person"
+        },
+        {
+            "foaf:first_name": "Reinhilde",
+            "foaf:last_name": "Schepens",
+            "affiliation": {
+                "foaf:name": "De Vlaamse Waterweg nv"
+            },
+            "foaf:mbox": "reinhilde.schepens@wenz.be",
+            "@type": "person:Person"
+        },
+        {
+            "foaf:first_name": "Luc",
+            "foaf:last_name": "Janssens",
+            "affiliation": {
+                "foaf:name": "Stad Lier"
+            },
+            "foaf:mbox": "luc.janssens@lier.be",
+            "@type": "person:Person"
+        },
+        {
+            "foaf:first_name": "Dennis",
+            "foaf:last_name": "Devriendt",
+            "affiliation": {
+                "foaf:name": "Hogeschool Gent"
+            },
+            "foaf:mbox": "dennis.devriendt@hogent.be",
+            "@type": "person:Person"
+        },
+        {
+            "foaf:first_name": "Filip",
+            "foaf:last_name": "Mahieu",
+            "affiliation": {
+                "foaf:name": "Provincie Oost-Vlaanderen"
+            },
+            "foaf:mbox": "filip.mahieu@oost-vlaanderen.be",
+            "@type": "person:Person"
+        },
+        {
+            "foaf:first_name": "Cornelis",
+            "foaf:last_name": "Stal",
+            "affiliation": {
+                "foaf:name": "Hogeschool Gent"
+            },
+            "foaf:mbox": "cornelis.stal@hogent.be",
+            "@type": "person:Person"
+        },
+        {
+            "foaf:first_name": "Luk",
+            "foaf:last_name": "Mutsaerts",
+            "affiliation": {
+                "foaf:name": "Departement Omgeving"
+            },
+            "foaf:mbox": "luk.mutsaerts@vlaanderen.be",
+            "@type": "person:Person"
+        },
+        {
+            "foaf:first_name": "Bea",
+            "foaf:last_name": "Toppet",
+            "affiliation": {
+                "foaf:name": "Hogeschool PXL"
+            },
+            "foaf:mbox": "bea.toppet@pxl.be",
+            "@type": "person:Person"
+        },
+        {
+            "foaf:first_name": "Nicolas",
+            "foaf:last_name": "De Blieck",
+            "affiliation": {
+                "foaf:name": "TMVW"
+            },
+            "foaf:mbox": "nicolas.deblieck@farys.be",
+            "@type": "person:Person"
+        },
+        {
+            "foaf:first_name": "Emmanuel",
+            "foaf:last_name": "Ampe",
+            "affiliation": {
+                "foaf:name": "Vereniging voor Openbaar Groen"
+            },
+            "foaf:mbox": "emmanuel@vvog.info",
+            "@type": "person:Person"
+        },
+        {
+            "foaf:first_name": "Pieter",
+            "foaf:last_name": "Deckers",
+            "affiliation": {
+                "foaf:name": "Provincie Oost-Vlaanderen"
+            },
+            "foaf:mbox": "pieter.deckers@oost-vlaanderen.be",
+            "@type": "person:Person"
+        },
+        {
+            "foaf:first_name": "An",
+            "foaf:last_name": "Heirman",
+            "affiliation": {
+                "foaf:name": "G.I.M. - Geographic Information Management"
+            },
+            "foaf:mbox": "an@gim.be",
+            "@type": "person:Person"
+        },
+        {
+            "foaf:first_name": "Joke",
+            "foaf:last_name": "Van De Maele",
+            "affiliation": {
+                "foaf:name": "Stad Antwerpen"
+            },
+            "foaf:mbox": "joke.vandemaele@stad.antwerpen.be",
+            "@type": "person:Person"
+        },
+        {
+            "foaf:first_name": "Peter",
+            "foaf:last_name": "Van de Veire",
+            "affiliation": {
+                "foaf:name": "Gemeente Evergem"
+            },
+            "foaf:mbox": "peter.vandeveire@evergem.be",
+            "@type": "person:Person"
+        },
+        {
+            "foaf:first_name": "Marc",
+            "foaf:last_name": "Bruyland",
+            "affiliation": {
+                "foaf:name": "Federale Overheidsdienst Beleid en Ondersteuning"
+            },
+            "foaf:mbox": "marc.bruyland@bosa.fgov.be",
+            "@type": "person:Person"
+        },
+        {
+            "foaf:first_name": "Jan",
+            "foaf:last_name": "De Wael",
+            "affiliation": {
+                "foaf:name": "Stad Aalst"
+            },
+            "foaf:mbox": "jan.dewael@aalst.be",
+            "@type": "person:Person"
+        },
+        {
+            "foaf:first_name": "Pieter",
+            "foaf:last_name": "Lauwereys",
+            "affiliation": {
+                "foaf:name": "Stad Aalst"
+            },
+            "foaf:mbox": "pieter.lauwereys@aalst.be",
+            "@type": "person:Person"
+        },
+        {
+            "foaf:first_name": "Floris",
+            "foaf:last_name": "Van den Broeck",
+            "affiliation": {
+                "foaf:name": "Provincie Vlaams-Brabant"
+            },
+            "foaf:mbox": "floris.vandenbroeck@vlaamsbrabant.be",
+            "@type": "person:Person"
+        },
+        {
+            "foaf:first_name": "Diedrik",
+            "foaf:last_name": "Gaus",
+            "affiliation": {
+                "foaf:name": "Stad Gent - Data & Informatie"
+            },
+            "foaf:mbox": "Diedrik.gaus@stad.gent",
+            "@type": "person:Person"
+        },
+        {
+            "foaf:first_name": "Els",
+            "foaf:last_name": "Podevyn",
+            "affiliation": {
+                "foaf:name": "Stad Sint-Niklaas"
+            },
+            "foaf:mbox": "els.podevyn@sint-niklaas.be",
+            "@type": "person:Person"
+        },
+        {
+            "foaf:first_name": "Wouter",
+            "foaf:last_name": "Verhelst",
+            "affiliation": {
+                "foaf:name": "WVI"
+            },
+            "foaf:mbox": "w.verhelst@wvi.be",
+            "@type": "person:Person"
+        },
+        {
+            "foaf:first_name": "Liesbet",
+            "foaf:last_name": "DHondt",
+            "affiliation": {
+                "foaf:name": "Federale Overheidsdienst Beleid en Ondersteuning"
+            },
+            "foaf:mbox": "liesbet.dhondt@bosa.fgov.be",
+            "@type": "person:Person"
+        },
+        {
+            "foaf:first_name": "Ellen",
+            "foaf:last_name": "Debever",
+            "affiliation": {
+                "foaf:name": "Stad Oostende"
+            },
+            "foaf:mbox": "ellen.debever@oostende.be",
+            "@type": "person:Person"
+        },
+        {
+            "foaf:first_name": "Ruben",
+            "foaf:last_name": "Deblauwe",
+            "affiliation": {
+                "foaf:name": "Elia"
+            },
+            "foaf:mbox": "ruben.deblauwe@elia.be",
+            "@type": "person:Person"
+        },
+        {
+            "foaf:first_name": "Steven",
+            "foaf:last_name": "De Vriendt",
+            "affiliation": {
+                "foaf:name": "Provincie Oost-Vlaanderen"
+            },
+            "foaf:mbox": "steven.de.vriendt@oost-vlaanderen.be",
+            "@type": "person:Person"
+        },
+        {
+            "foaf:first_name": "Berdien",
+            "foaf:last_name": "De Roo",
+            "affiliation": {
+                "foaf:name": "Geosparc"
+            },
+            "foaf:mbox": "berdien.deroo@geosparc.com",
+            "@type": "person:Person"
+        },
+        {
+            "foaf:first_name": "Oliver",
+            "foaf:last_name": "May",
+            "affiliation": {
+                "foaf:name": "Geosparc"
+            },
+            "foaf:mbox": "oliver.may@geosparc.com",
+            "@type": "person:Person"
+        }
+    ],
+    "classes": [
+        {
+            "@id": "http://data.vlaanderen.be/ns/openbaardomein#Deel",
+            "@type": "http://www.w3.org/2002/07/owl#Class",
+            "name": {
+                "nl": "Deel"
+            },
+            "description": {
+                "nl": "Homogeen gedeelte van het aardoppervlak, met een gelijkaardige hoofdfunctie en fysiek voorkomen."
+            },
+            "usage": {}
+        },
+        {
+            "@id": "http://data.vlaanderen.be/ns/openbaardomein#Object",
+            "@type": "http://www.w3.org/2002/07/owl#Class",
+            "name": {
+                "nl": "Object"
+            },
+            "description": {
+                "nl": "De hoofdklasse waar alle objecten die geïnventariseerd kunnen worden van afgeleid worden."
+            },
+            "usage": {}
+        },
+        {
+            "@id": "http://data.vlaanderen.be/ns/openbaardomein/waterdeel#Waterloop",
+            "@type": "http://www.w3.org/2002/07/owl#Class",
+            "name": {
+                "nl": "Waterloop"
+            },
+            "description": {
+                "nl": "Gebied dat zorgt voor het verzamelen en transporteren van de horizontale afvloeiing van neerslag- en bronwater. "
+            },
+            "usage": {}
+        },
+        {
+            "@id": "http://data.vlaanderen.be/ns/openbaardomein/waterdeel#Waterdeel",
+            "@type": "http://www.w3.org/2002/07/owl#Class",
+            "name": {
+                "nl": "Waterdeel"
+            },
+            "description": {
+                "nl": "Gebied dat rechtstreeks gedomineerd wordt door de tijdelijke of permanente aanwezigheid van oppervlaktewater, met een bepaalde hieraan verbonden functie"
+            },
+            "usage": {}
+        },
+        {
+            "@id": "http://data.vlaanderen.be/ns/openbaardomein/waterdeel#Watervlak",
+            "@type": "http://www.w3.org/2002/07/owl#Class",
+            "name": {
+                "nl": "Watervlak"
+            },
+            "description": {
+                "nl": "Het gedeelte van het landoppervlak dat wordt ingenomen door stilstaand water en dat in hoofdzaak geen deel uitmaakt van het hydrografisch netwerk"
+            },
+            "usage": {}
+        },
+        {
+            "@id": "http://data.vlaanderen.be/ns/openbaardomein/waterdeel#Gracht",
+            "@type": "http://www.w3.org/2002/07/owl#Class",
+            "name": {
+                "nl": "Gracht"
+            },
+            "description": {
+                "nl": "Een binnen de wegbaan gelegen onbevaarbare waterloop, bedoeld voor de af- of aanvoer of het tijdelijk ophouden van oppervlaktewater"
+            },
+            "usage": {}
+        },
+        {
+            "@id": "http://data.vlaanderen.be/ns/openbaardomein/waterdeel#Rivier",
+            "@type": "http://www.w3.org/2002/07/owl#Class",
+            "name": {
+                "nl": "Rivier"
+            },
+            "description": {
+                "nl": "Een natuurlijke waterloop, bedoeld voor de af- of aanvoer of het tijdelijk ophouden van oppervlaktewater en die bevaarbaar is."
+            },
+            "usage": {}
+        },
+        {
+            "@id": "http://data.vlaanderen.be/ns/openbaardomein/waterdeel#Kanaal",
+            "@type": "http://www.w3.org/2002/07/owl#Class",
+            "name": {
+                "nl": "Kanaal"
+            },
+            "description": {
+                "nl": "Een waterloop die, geheel of in grote mate, tot stand is gebracht door het ingrijpen van de mens."
+            },
+            "usage": {}
+        },
+        {
+            "@id": "http://data.vlaanderen.be/ns/openbaardomein/waterdeel#Sloot",
+            "@type": "http://www.w3.org/2002/07/owl#Class",
+            "name": {
+                "nl": "Sloot"
+            },
+            "description": {
+                "nl": "Een sloot is een waterloop op plaatsen waar regenwater samenstroomt, zodat het gezamenlijk kan worden afgevoerd om wateroverlast te voorkomen. Een sloot is een onderdeel van de waterhishoudkundige infrastructuur. Het via sloten afgevoerde water wordt elders weggepompt."
+            },
+            "usage": {}
+        },
+        {
+            "@id": "http://data.vlaanderen.be/ns/openbaardomein/waterdeel#Beek",
+            "@type": "http://www.w3.org/2002/07/owl#Class",
+            "name": {
+                "nl": "Beek"
+            },
+            "description": {
+                "nl": "Een beek is een buiten de wegbaan gelegen natuurlijke stroom ondiep water die vanuit een oorpsrong, vaak een bron, stroomafwaarts vloeit."
+            },
+            "usage": {}
+        },
+        {
+            "@id": "http://data.vlaanderen.be/ns/openbaardomein/waterdeel#Vijver",
+            "@type": "http://www.w3.org/2002/07/owl#Class",
+            "name": {
+                "nl": "Vijver"
+            },
+            "description": {
+                "nl": "Een vijver is een door de mens aangelegd waterlichaam met beperkte oppervlakte en  wordt geassocieerd met visvangst of een sierfunctie."
+            },
+            "usage": {}
+        },
+        {
+            "@id": "http://data.vlaanderen.be/ns/openbaardomein/waterdeel#Meer",
+            "@type": "http://www.w3.org/2002/07/owl#Class",
+            "name": {
+                "nl": "Meer"
+            },
+            "description": {
+                "nl": "Een meer is een door land omringde watervlakte. De meeste meren hebben een of meer voedende en afwaterende rivieren."
+            },
+            "usage": {}
+        },
+        {
+            "@id": "http://data.vlaanderen.be/ns/openbaardomein/waterdeel#Poel",
+            "@type": "http://www.w3.org/2002/07/owl#Class",
+            "name": {
+                "nl": "Poel"
+            },
+            "description": {
+                "nl": "Een poel is een meestal door de mens uitgegraven waterpartij in een grasland, bedoeld als drinkplaats voor het vee. Het zijn meestal kleine, ondiepe waterpartijen in grasland."
+            },
+            "usage": {}
+        },
+        {
+            "@id": "http://data.vlaanderen.be/ns/openbaardomein/waterdeel#Slotgracht",
+            "@type": "http://www.w3.org/2002/07/owl#Class",
+            "name": {
+                "nl": "Slotgracht"
+            },
+            "description": {
+                "nl": "Een slotgracht is een diepe, brede gracht, droog of gevuld met water, dat een kasteel of gebouw omringt."
+            },
+            "usage": {}
+        },
+        {
+            "@id": "http://data.vlaanderen.be/ns/openbaardomein/waterdeel#Ven",
+            "@type": "http://www.w3.org/2002/07/owl#Class",
+            "name": {
+                "nl": "Ven"
+            },
+            "description": {
+                "nl": "Een ven is een klein, meestal ondiep meer dat voorkomt op Pleistocene zandgronden. Vennen hebben wisselende waterstanden en zijn zelden groter dan enkele hectaren. Onder vennen worden uitsluitend natuurlijke wateren verstaan."
+            },
+            "usage": {}
+        },
+        {
+            "@id": "http://data.vlaanderen.be/ns/openbaardomein/waterdeel#WaterVoorkomen",
+            "@type": "http://www.w3.org/2002/07/owl#Class",
+            "name": {
+                "nl": "Water Voorkomen"
+            },
+            "description": {
+                "nl": "Fysiek voorkomen van het oppervlak bestaande uit water"
+            },
+            "usage": {}
+        }
+    ],
+    "properties": [
+        {
+            "@id": "http://data.vlaanderen.be/ns/openbaardomein/waterdeel#voorkomen",
+            "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
+            "name": {
+                "nl": "voorkomen"
+            },
+            "description": {
+                "nl": "Verwijst naar het fysiek voorkomen van het beheerobject."
+            },
+            "usage": {},
+            "domain": [
+                "http://data.vlaanderen.be/ns/openbaardomein/waterdeel#Waterdeel"
+            ],
+            "range": [
+                "http://data.vlaanderen.be/ns/openbaardomein/waterdeel#WaterVoorkomen"
+            ],
+            "generalization": [],
+            "minCardinality": "1",
+            "maxCardinality": "1"
+        },
+        {
+            "@id": "http://data.vlaanderen.be/ns/openbaardomein#oppervlakte",
+            "@type": "http://www.w3.org/2002/07/owl#DatatypeProperty",
+            "name": {
+                "nl": "oppervlakte"
+            },
+            "description": {
+                "nl": "De afmeting van het object in vierkante meter."
+            },
+            "usage": {},
+            "domain": [
+                "http://data.vlaanderen.be/ns/openbaardomein#Deel"
+            ],
+            "range": [
+                "http://www.w3.org/2001/XMLSchema#double"
+            ],
+            "generalization": [],
+            "minCardinality": "0",
+            "maxCardinality": "1"
+        },
+        {
+            "@id": "http://data.vlaanderen.be/ns/openbaardomein#begindatum",
+            "@type": "http://www.w3.org/2002/07/owl#DatatypeProperty",
+            "name": {
+                "nl": "begindatum"
+            },
+            "description": {
+                "nl": "Datum waarop de huidige versie van het gebied of object in gebruik wordt genomen."
+            },
+            "usage": {},
+            "domain": [
+                "http://www.w3.org/2000/01/rdf-schema#Resource"
+            ],
+            "range": [
+                "http://www.w3.org/2001/XMLSchema#dateTime"
+            ],
+            "generalization": [],
+            "minCardinality": "0",
+            "maxCardinality": "1"
+        },
+        {
+            "@id": "http://data.vlaanderen.be/ns/openbaardomein#einddatum",
+            "@type": "http://www.w3.org/2002/07/owl#DatatypeProperty",
+            "name": {
+                "nl": "einddatum"
+            },
+            "description": {
+                "nl": "Datum waarop de huidige versie van het gebied of object uit gebruik wordt genomen."
+            },
+            "usage": {},
+            "domain": [
+                "http://www.w3.org/2000/01/rdf-schema#Resource"
+            ],
+            "range": [
+                "http://www.w3.org/2001/XMLSchema#dateTime"
+            ],
+            "generalization": [],
+            "minCardinality": "0",
+            "maxCardinality": "1"
+        },
+        {
+            "@id": "http://data.vlaanderen.be/ns/openbaardomein#niveau",
+            "@type": "http://www.w3.org/2002/07/owl#DatatypeProperty",
+            "name": {
+                "nl": "niveau"
+            },
+            "description": {
+                "nl": "Het niveau waarop het object zich bevindt, relatief ten opzichte van andere objecten."
+            },
+            "usage": {},
+            "domain": [
+                "http://data.vlaanderen.be/ns/openbaardomein#Object"
+            ],
+            "range": [
+                "http://www.w3.org/2001/XMLSchema#integer"
+            ],
+            "generalization": [],
+            "minCardinality": "0",
+            "maxCardinality": "1"
+        },
+        {
+            "@id": "http://www.w3.org/ns/locn#geometry",
+            "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
+            "name": {
+                "nl": "geometrie"
+            },
+            "description": {
+                "nl": "De geometrie overeenkomstig met een bepaald object."
+            },
+            "usage": {},
+            "domain": [
+                "http://data.vlaanderen.be/ns/openbaardomein#Object"
+            ],
+            "range": [
+                "http://www.opengis.net/ont/geosparql#Geometry"
+            ],
+            "generalization": [],
+            "minCardinality": "1",
+            "maxCardinality": "1"
+        },
+        {
+            "@id": "http://data.vlaanderen.be/ns/openbaardomein#nauwkeurigheid",
+            "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
+            "name": {
+                "nl": "nauwkeurigheid"
+            },
+            "description": {
+                "nl": "De precisie waarmee het object opgemeten werd."
+            },
+            "usage": {},
+            "domain": [
+                "http://data.vlaanderen.be/ns/openbaardomein#Object"
+            ],
+            "range": [
+                "http://www.w3.org/2004/02/skos/core#Concept"
+            ],
+            "generalization": [],
+            "minCardinality": "1",
+            "maxCardinality": "1"
+        },
+        {
+            "@id": "http://purl.org/dc/terms/relation",
+            "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
+            "name": {
+                "nl": "relatie"
+            },
+            "description": {
+                "nl": "Verwijst naar een object in een andere databank dat meer informatie kan verschaffen over het beheerobject."
+            },
+            "usage": {},
+            "domain": [
+                "http://data.vlaanderen.be/ns/openbaardomein#Object"
+            ],
+            "range": [
+                "http://www.w3.org/2000/01/rdf-schema#Resource"
+            ],
+            "generalization": [],
+            "minCardinality": "0",
+            "maxCardinality": "*"
+        },
+        {
+            "@id": "http://schema.org/width",
+            "@type": "http://www.w3.org/2002/07/owl#DatatypeProperty",
+            "name": {
+                "nl": "breedte"
+            },
+            "description": {
+                "nl": "De breedte van het object in meter."
+            },
+            "usage": {},
+            "domain": [
+                "http://data.vlaanderen.be/ns/openbaardomein/waterdeel#Waterloop"
+            ],
+            "range": [
+                "http://www.w3.org/2001/XMLSchema#double"
+            ],
+            "generalization": [],
+            "minCardinality": "1",
+            "maxCardinality": "1"
+        },
+        {
+            "@id": "http://open.vocab.org/terms/length",
+            "@type": "http://www.w3.org/2002/07/owl#DatatypeProperty",
+            "name": {
+                "nl": "lengte"
+            },
+            "description": {
+                "nl": "TODO"
+            },
+            "usage": {},
+            "domain": [
+                "http://data.vlaanderen.be/ns/openbaardomein/waterdeel#Waterloop"
+            ],
+            "range": [
+                "http://www.w3.org/2001/XMLSchema#double"
+            ],
+            "generalization": [],
+            "minCardinality": "1",
+            "maxCardinality": "1"
+        },
+        {
+            "@id": "http://purl.org/dc/terms/title",
+            "@type": "http://www.w3.org/2002/07/owl#DatatypeProperty",
+            "name": {
+                "nl": "naam"
+            },
+            "description": {
+                "nl": "TODO"
+            },
+            "usage": {},
+            "domain": [
+                "http://data.vlaanderen.be/ns/openbaardomein/waterdeel#Waterloop"
+            ],
+            "range": [
+                "http://www.w3.org/2001/XMLSchema#string"
+            ],
+            "generalization": [],
+            "minCardinality": "1",
+            "maxCardinality": "1"
+        },
+        {
+            "@id": "http://purl.org/dc/terms/title",
+            "@type": "http://www.w3.org/2002/07/owl#DatatypeProperty",
+            "name": {
+                "nl": "naam"
+            },
+            "description": {
+                "nl": "TODO"
+            },
+            "usage": {},
+            "domain": [
+                "http://data.vlaanderen.be/ns/openbaardomein/waterdeel#Watervlak"
+            ],
+            "range": [
+                "http://www.w3.org/2001/XMLSchema#string"
+            ],
+            "generalization": [],
+            "minCardinality": "1",
+            "maxCardinality": "1"
+        }
+    ],
+    "externals": [
+        {
+            "name": {
+                "nl": "openbaardomein"
+            },
+            "@id": "http://data.vlaanderen.be/ns/openbaardomein",
+            "@type": "http://www.w3.org/2000/01/rdf-schema#Class"
+        },
+        {
+            "name": {
+                "nl": "owl"
+            },
+            "@id": "http://www.w3.org/2002/07/owl",
+            "@type": "http://www.w3.org/2000/01/rdf-schema#Class"
+        },
+        {
+            "name": {
+                "nl": "rdf-schema"
+            },
+            "@id": "http://www.w3.org/2000/01/rdf-schema",
+            "@type": "http://www.w3.org/2000/01/rdf-schema#Class"
+        },
+        {
+            "name": {
+                "nl": "XMLSchema"
+            },
+            "@id": "http://www.w3.org/2001/XMLSchema",
+            "@type": "http://www.w3.org/2000/01/rdf-schema#Class"
+        },
+        {
+            "name": {
+                "nl": "geosparql"
+            },
+            "@id": "http://www.opengis.net/ont/geosparql",
+            "@type": "http://www.w3.org/2000/01/rdf-schema#Class"
+        },
+        {
+            "name": {
+                "nl": "core"
+            },
+            "@id": "http://www.w3.org/2004/02/skos/core",
+            "@type": "http://www.w3.org/2000/01/rdf-schema#Class"
+        }
+    ]
+}
